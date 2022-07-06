@@ -2,7 +2,9 @@ import { createContext, useMemo, useState } from "react";
 
 export const ToggleDrawerContext = createContext({
   state: { left: false },
-  toggleDrawer: (anchor: "left", open: boolean) => {},
+  toggleDrawer:
+    (anchor: "left", open: boolean) =>
+    (_: React.KeyboardEvent | React.MouseEvent) => {},
 });
 
 export const ToggleDrawerProvider: React.FC<{
@@ -25,14 +27,11 @@ export const ToggleDrawerProvider: React.FC<{
           ) {
             return;
           }
-
           setState({ ...state, [anchor]: open });
         },
     }),
     [state]
   );
-
-  // console.log(state);
 
   return (
     <ToggleDrawerContext.Provider value={toggleDrawerMemo}>

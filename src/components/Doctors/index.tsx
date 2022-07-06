@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { data } from "utils";
 import RecipeReviewCard from "./Card";
-import StepperIcon from "./Step";
+import StepperIcon from "./StepIcons";
 import ToolbarCustom from "./Toolbar";
 
 const Doctors: React.FC = (): React.ReactElement => {

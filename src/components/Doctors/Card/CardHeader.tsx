@@ -27,10 +27,10 @@ const CardHeader: React.FC<Props> = ({ data }): React.ReactElement => {
       }
       subheader={
         <>
-          <Typography component="span" sx={{ display: "block" }}>
+          <Typography variant="overline" sx={{ display: "block" }}>
             <RemoveRedEyeIcon fontSize="small" /> {data.view}k
           </Typography>
-          <Typography component="span" sx={{ display: "block" }}>
+          <Typography variant="overline" sx={{ display: "block" }}>
             <PersonIcon fontSize="small" /> {data.visit}
           </Typography>
         </>

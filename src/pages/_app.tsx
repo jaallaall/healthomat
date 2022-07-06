@@ -1,6 +1,6 @@
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ColorModeProvider } from "context";
+import { ColorModeProvider, ToggleDrawerProvider } from "context";
 import type { NextPage } from "next";
 import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
@@ -55,19 +55,21 @@ function MyApp(props: AppPropsWithLayout) {
     <CacheProvider value={memoizedEmotionCache}>
       <CookiesProvider>
         <ColorModeProvider locale={router.locale}>
-          <Head>
-            <title>{"healthomat-solution"}</title>
-            <meta
-              name="viewport"
-              content="initial-scale=1, width=device-width"
-            />
-          </Head>
-          {/* <NextNProgressStyled height={3} /> */}
-          {/* <QueryClientProvider client={queryClient}> */}
-          <CssBaseline />
-          {getLayout(<Component {...pageProps} />)}
-          {/* <ReactQueryDevtools initialIsOpen={false} />
+          <ToggleDrawerProvider>
+            <Head>
+              <title>{"healthomat"}</title>
+              <meta
+                name="viewport"
+                content="initial-scale=1, width=device-width"
+              />
+            </Head>
+            {/* <NextNProgressStyled height={3} /> */}
+            {/* <QueryClientProvider client={queryClient}> */}
+            <CssBaseline />
+            {getLayout(<Component {...pageProps} />)}
+            {/* <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider> */}
+          </ToggleDrawerProvider>
         </ColorModeProvider>
       </CookiesProvider>
     </CacheProvider>

@@ -9,3 +9,8 @@ export interface Options {
 // export interface Data {
 //   [key: string]: keyof typeof data[0];
 // }
+
+export enum Pages {
+  DoctorsList = "/doctor-list",
+  Doctors = "/",
+}
