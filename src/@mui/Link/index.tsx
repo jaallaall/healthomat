@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 export type LinkProps = Omit<LinkMUIProps, "href" | "classes"> &
   Pick<NextLinkProps, "href" | "as" | "prefetch">;
 
-export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   ({ href, as, prefetch, sx, ...props }, ref) => (
     <NextLink href={href} as={as} prefetch={prefetch} passHref>
       <LinkMUI
@@ -23,3 +23,5 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     </NextLink>
   )
 );
+
+export default Link;

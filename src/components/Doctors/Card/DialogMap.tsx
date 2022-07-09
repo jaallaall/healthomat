@@ -1,4 +1,4 @@
-import { BootstrapDialogTitle } from "@mui";
+import { DialogTitle } from "@mui";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import Typography from "@mui/material/Typography";
@@ -20,9 +20,9 @@ export default function DialogMap({ open, setOpen, title }: Props) {
       aria-labelledby="customized-dialog-title"
       open={open}
     >
-      <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+      <DialogTitle id="customized-dialog-title" onClose={handleClose}>
         {title}
-      </BootstrapDialogTitle>
+      </DialogTitle>
       <DialogContent dividers>
         <Typography gutterBottom>نقشه</Typography>
       </DialogContent>

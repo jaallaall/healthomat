@@ -1,14 +1,14 @@
-import DialogTitle from "@mui/material/DialogTitle";
+import MuiDialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-export const BootstrapDialogTitle: React.FC<{
+const DialogTitle: React.FC<{
   id: string;
   onClose: () => void;
   children: React.ReactNode;
 }> = ({ children, onClose, ...other }): React.ReactElement => {
   return (
-    <DialogTitle
+    <MuiDialogTitle
       sx={{
         m: 0,
         p: 2,
@@ -34,6 +34,8 @@ export const BootstrapDialogTitle: React.FC<{
           <CloseIcon />
         </IconButton>
       ) : null}
-    </DialogTitle>
+    </MuiDialogTitle>
   );
 };
+
+export default DialogTitle;

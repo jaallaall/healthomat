@@ -9,7 +9,7 @@ interface Props {
   expanded: boolean;
 }
 
-export const Accordion: React.FC<Props> = ({
+const Accordion: React.FC<Props> = ({
   title,
   children,
   expanded,
@@ -39,3 +39,5 @@ export const Accordion: React.FC<Props> = ({
     </>
   );
 };
+
+export default Accordion;

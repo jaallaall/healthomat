@@ -1,6 +1,6 @@
 import Portal from "@mui/base/Portal";
 import { SxProps } from "@mui/material";
-import Backdrop from "@mui/material/Backdrop";
+import MuiBackdrop from "@mui/material/Backdrop";
 import { memo, useEffect, useRef } from "react";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   sx?: SxProps;
 }
 
-export const BackdropCustom: React.FC<Props> = memo(
+const Backdrop: React.FC<Props> = memo(
   ({ open, setOpen, sx }): React.ReactElement | null => {
     const container = useRef(null);
     useEffect(() => {
@@ -21,7 +21,7 @@ export const BackdropCustom: React.FC<Props> = memo(
     });
     return open ? (
       <Portal container={container.current}>
-        <Backdrop
+        <MuiBackdrop
           sx={{ color: "#fff", zIndex: 1090, ...sx }}
           open={open}
           onClick={() => setOpen(false)}
@@ -30,3 +30,5 @@ export const BackdropCustom: React.FC<Props> = memo(
     ) : null;
   }
 );
+
+export default Backdrop;

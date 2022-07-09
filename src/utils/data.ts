@@ -29,7 +29,7 @@ export const data = [
     visit: 4,
     rate: 4.4,
   },
-];
+] as const;
 
 export const list = [
   {

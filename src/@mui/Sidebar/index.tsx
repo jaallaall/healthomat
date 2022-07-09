@@ -8,7 +8,7 @@ interface Props {
   heightHeader: number;
 }
 
-export const Sidebar: React.FC<Props> = ({
+const Sidebar: React.FC<Props> = ({
   children,
   heightHeader,
 }): React.ReactElement => {
@@ -46,3 +46,5 @@ export const Sidebar: React.FC<Props> = ({
     </Drawer>
   );
 };
+
+export default Sidebar;

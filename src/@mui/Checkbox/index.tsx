@@ -1,4 +1,4 @@
-import Checkbox, { CheckboxProps } from "@mui/material/Checkbox";
+import MuiCheckbox, { CheckboxProps } from "@mui/material/Checkbox";
 import { styled } from "@mui/material/styles";
 
 const BpIcon = styled("span")(({ theme }: any) => ({
@@ -23,9 +23,9 @@ const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
 }));
 
 // Inspired by blueprintjs
-export function BpCheckbox(props: CheckboxProps) {
+function Checkbox(props: CheckboxProps) {
   return (
-    <Checkbox
+    <MuiCheckbox
       sx={{
         "&:hover": { bgcolor: "transparent" },
       }}
@@ -38,3 +38,5 @@ export function BpCheckbox(props: CheckboxProps) {
     />
   );
 }
+
+export default Checkbox;

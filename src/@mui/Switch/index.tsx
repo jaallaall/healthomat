@@ -1,6 +1,6 @@
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { styled } from "@mui/material/styles";
-import Switch, { SwitchProps } from "@mui/material/Switch";
+import MuiSwitch, { SwitchProps } from "@mui/material/Switch";
 import { useNextQueryParams } from "hooks";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -8,7 +8,11 @@ import { memo } from "react";
 import { removeUndefined } from "utils";
 
 const StyledSwitch = styled((props: SwitchProps) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+  <MuiSwitch
+    focusVisibleClassName=".Mui-focusVisible"
+    disableRipple
+    {...props}
+  />
 ))(({ theme }: any) => ({
   width: 55,
   height: 30,
@@ -56,7 +60,7 @@ const StyledSwitch = styled((props: SwitchProps) => (
   },
 }));
 
-export const SwitchCustom: React.FC = memo((): React.ReactElement => {
+const Switch: React.FC = memo((): React.ReactElement => {
   const { t } = useTranslation();
   const { push, pathname } = useRouter();
   const value = useNextQueryParams();
@@ -100,3 +104,5 @@ export const SwitchCustom: React.FC = memo((): React.ReactElement => {
     />
   );
 });
+
+export default Switch;
